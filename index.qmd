@@ -1,10 +1,14 @@
 ---
-title: "Home"
+title: "About"
 subtitle: ""
 ---
 
-This HTA hub is designed to provide an inventory of R packages related to health economics. It is aimed at health economists and R developers.
+The HTA hub is designed to provide an inventory of R packages related to health economics. It is aimed at health economists and R developers.
 
-The hub lists all relevant packages published on Github, and provides information on code quality.
+The hub provides an automated listing of relevant packages published on Github, and provides information on code quality.
+
+The hub features a data scraping tool that searches through Github using keywords related to health economic modeling, and renders it on the [hub.qmd](Hub page).
+
+For a curated list of health economics R packages, please visit the [getstarted.qmd](Get Started page), last updated August 2024.
 
 This project was started as part of a R-HTA Hackathon held at the University of Belfast on 5th and 6th August 2024.
