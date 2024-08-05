@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "HTA hub"
+  subtitle: "Website for an inventory of health economics R packages"
+  
+  navbar:
+    logo: images/logo.jpg
+    left:
+      - icon: github
+        href: https://github.com/HTAhackathon2024/HTA-hub
+      - href: index.qmd
+        text: Home
+      - href: getstarted.qmd
+        text: Get Started
+      - href: hub.qmd
+        text: Visit the Hub
+
+page-footer: "Developed during the 2024 HTA hackathon at University of Belfast, UK" 
+reader-mode: false
+format:
+  html:
+    theme: 
+      light: [litera]
+      dark: [superhero]
+    css: styles.css
+    toc: true
+    toc-location: left
