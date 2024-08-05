@@ -1,10 +1,10 @@
 project:
   type: website
-  output-dir: docs
+   output-dir: docs
 
 website:
   title: HTA hub
-  
+  page-footer: Developed during the 2024 HTA hackathon at Queens University Belfast, UK
   navbar:
     logo: images/logo.png
     left:
@@ -17,7 +17,6 @@ website:
       - href: hub.qmd
         text: Visit the Hub
 
-page-footer: Developed during the 2024 HTA hackathon at University of Belfast, UK
 reader-mode: false
 format:
   html:
