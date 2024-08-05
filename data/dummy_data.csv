@@ -1,0 +1,3 @@
+"","name","description","on_cran","has_tests","used_by","num_contributors","num_github_stars","last_commit_timestamp","licence","publication","authors"
+"1","smithr","A cool package",TRUE,TRUE,"tidyr, dplyr",2,250,2024-01-01,"MIT","YES","John Smith, Smith Joe"
+"2","johnr","Another thing",FALSE,FALSE,"",3,8,2024-01-01,"GLP-3","UNKNOWN","John Smith"
