@@ -1,0 +1,8 @@
+---
+title: "Home"
+subtitle: ""
+---
+
+This webpage aims to help you navigate you through the forest of R packages that can be used in health economics and signpost you to the most appropriate one, given your intended health economic analysis.
+
+This decision tree-style compendium was created over 2 days as part of a R Hackathon (6th - 7th November 2019), with work continued until 2020. The R Hackathon was organised by Dr. Nathan Green & Imperial College London (https://n8thangreen.wixsite.com/hermes-hack-london)
