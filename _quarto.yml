@@ -3,8 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: HERA
-  subtitle: Health Economics in R for All
+  title: HERA - Health Economics in R for All
   page-footer: Developed during the 2024 HTA hackathon at Queen's University Belfast, UK
   navbar:
     logo: images/logo.png
@@ -15,8 +14,6 @@ website:
         text: Home
       - href: getstarted.qmd
         text: Get Started
-      - href: hub.qmd
-        text: Visit the Hub
 
 reader-mode: false
 format:
