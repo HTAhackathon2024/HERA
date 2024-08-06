@@ -11,7 +11,7 @@ fetch_metadata_for_package <- function(name, path_fragment, cran_db) {
   }
   if (on_cran) {
     logger::log_info(sprintf("Package %s is on CRAN; using CRAN metadata", name))
-    cran_data <- cran_metadata(cran_db[cran_db$package == name,])
+    cran_data <- cran_metadata(cran_db, name)
     compile_metadata(gh_data, cran_data = cran_data)
   } else {
     logger::log_info(sprintf("Package %s is not on CRAN; retrieving DESCRIPTION file from Github", name))

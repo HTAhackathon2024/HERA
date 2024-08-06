@@ -47,11 +47,12 @@ compile_metadata <- function(gh_data, cran_data = NULL, description_contents = N
   ret
 }
 
-cran_metadata <- function(rows) {
+cran_metadata <- function(cran_db, name) {
+  rows <- cran_db[cran_db$package == name,]
   if (nrow(rows) == 0) {
     return(NULL)
   }
-  row <- rows[[1]]
+  row <- rows[1, ]
   ret <- list(name = row$package,
               title = row$title,
               description = row$description,
