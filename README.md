@@ -1,5 +1,7 @@
 # HERA - Health Economics R Packages for All
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![codecov](https://codecov.io/gh/HTAhackathon2024/HERA/graph/badge.svg?token=4X9JMWKLIE)](https://codecov.io/gh/HTAhackathon2024/HERA)
+
 Website for a repository/inventory of open source health economics R packages available on Github, with a number of metrics indicative of reliability.
 
 ## Compiling Quarto website
