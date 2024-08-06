@@ -12,8 +12,10 @@ get_packages <- function() {
 }
 
 get_cran_db <- function(packages) {
+  logger::log_info("Getting CRAN database")
   cran_db <- tools::CRAN_package_db()
   cran_db <- cran_db[cran_db$Package %in% packages$name,]
+  logger::log_info("Filtering CRAN database")
   cran_db_clean <- cranly::clean_CRAN_db(cran_db)[, c("author",
                                                       "package",
                                                       "title",
