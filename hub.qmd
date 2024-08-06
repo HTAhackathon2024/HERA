@@ -1,6 +1,0 @@
----
-title: "Home"
-subtitle: ""
----
-
-This webpage aims to help you navigate you through the forest of R packages that can be used in health economics and signpost you to the most appropriate one, given your intended health economic analysis.
