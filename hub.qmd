@@ -12,8 +12,8 @@ library(DT)
 pkgs <- read.csv("data/data.csv", stringsAsFactors = FALSE)
 
 # create datatable
-datatable(pkgs[-1], colnames = c(
-    "", "Name", "Description", "License", "Authors", "Maintained by","Published", "Has tests", "Has vignettes",
+datatable(pkgs, colnames = c(
+    "Title", "Full package name", "Description", "License", "Authors", "Maintained by","Published", "Has tests", "Has vignettes",
     "Contributors (n)"
 )
 )
