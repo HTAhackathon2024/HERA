@@ -64,3 +64,6 @@ cran_db <- get_cran_db(packages)
 
 package_metadata <- fetch_metadata(packages, cran_db)
 package_metadata <- Filter(Negate(is.null), package_metadata)
+all_names <- unique(unlist(lapply(package_metadata, names)))
+filled_list <- lapply(package_metadata, fill_na, all_names = all_names)
+df <- bind_rows(lapply(filled_list, as.data.frame))
