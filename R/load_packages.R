@@ -1,3 +1,5 @@
+#' @description Read packages from config/packages.csv, filtering to those with valid package names
+#' @return A data.frame with 2 columns: name, url
 get_packages <- function() {
   packages <- read.csv("config/packages.csv",
                        header = FALSE,
@@ -5,6 +7,10 @@ get_packages <- function() {
   packages <- packages[is_valid_name(packages$name),]
 }
 
+#' @description Get CRAN database. Uses cache if available.
+#' @param use_cache Optional Logical. Default TRUE.
+#' @return A data.frame of packages with columns "author","package","title","description","license",
+#' "date/publication","maintainer","reverse_depends"
 get_cran_db <- function(packages, use_cache = TRUE) {
   cran_db <- NULL
   if (use_cache & file.exists("cache/cran_db.rds")) {
