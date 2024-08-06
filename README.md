@@ -1,13 +1,18 @@
 # HERA - Health Economics R Packages for All
 Website for a repository/inventory of open source health economics R packages available on Github, with a number of metrics indicative of reliability.
 
-# Compiling Quarto website
-To compile the website locally, run 
+## Compiling Quarto website
+To compile the website locally for testing, run 
 ```
 quarto render
 ```
 
 This will generate static files in the `docs` folder. Open `docs/index.html` to view the website.
+
+## Deploying Quarto website
+The site is deployed automatically on merges to main via Github actions. The config for this
+action can be found at [.github/workflows/quarto-publish.yml]()
+
 ## Compiling package metadata
 To recompile metadata for the set of packages defined in `config/packages.csv`, run
 
