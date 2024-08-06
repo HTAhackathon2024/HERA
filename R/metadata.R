@@ -10,7 +10,8 @@ compile_metadata <- function(gh_data, cran_data = NULL, description_contents = N
   if (!("github_metadata" %in% class(gh_data))) {
     stop("gh_data must be of type 'github_metadata'")
   }
-  if (is.null(cran_data)) {
+  on_cran <- !is.null(cran_data)
+  if (on_cran) {
     if (is.null(description_contents)) {
       stop("If CRAN metadata is NULL, must provide DESCRIPTION contents")
     }
@@ -41,7 +42,8 @@ compile_metadata <- function(gh_data, cran_data = NULL, description_contents = N
               date_published = date_published,
               has_tests = gh_data$has_tests,
               has_vignettes = gh_data$has_vignettes,
-              num_contributors = gh_data$num_contributors
+              num_contributors = gh_data$num_contributors,
+              on_cran = on_cran
   )
   class(ret) <- append("htahub_metadata", class(ret))
   ret

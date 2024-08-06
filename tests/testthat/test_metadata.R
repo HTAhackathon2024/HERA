@@ -9,3 +9,7 @@ test_that("can read metadata from cran", {
   expect_equal(meta$maintainer, "Rob Young")
   expect_equal(meta$date_published, "2022-04-27 14:50:07 UTC")
 })
+
+test_that("Can compile metadata", {
+
+})
