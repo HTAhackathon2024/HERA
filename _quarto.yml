@@ -4,7 +4,6 @@ project:
 
 website:
   title: HERA
-  subtitle: Health Economics in R for All
   page-footer: Developed during the 2024 HTA hackathon at Queen's University Belfast, UK
   navbar:
     logo: images/logo.png
