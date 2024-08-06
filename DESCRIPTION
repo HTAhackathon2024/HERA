@@ -8,3 +8,5 @@ Imports:
     logger,
     purrr,
     tools
+Suggests:
+    testthat
