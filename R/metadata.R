@@ -11,7 +11,7 @@ compile_metadata <- function(gh_data, cran_data = NULL, description_contents = N
     stop("gh_data must be of type 'github_metadata'")
   }
   on_cran <- !is.null(cran_data)
-  if (on_cran) {
+  if (!on_cran) {
     if (is.null(description_contents)) {
       stop("If CRAN metadata is NULL, must provide DESCRIPTION contents")
     }

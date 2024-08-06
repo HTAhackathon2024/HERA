@@ -1,6 +1,7 @@
-test_that("can read metadata from cran", {
-  packages <- get_packages(test_path("testdata", "packages.csv"))
-  cran_db <- get_cran_db(packages)
+packages <- get_packages(test_path("testdata", "packages.csv"))
+cran_db <- get_cran_db(packages)
+
+test_that("Can read metadata from cran", {
   meta <- cran_metadata(cran_db, "maic")
   expect_equal(meta$name, "maic")
   expect_equal(meta$title, "Matching-Adjusted Indirect Comparison")
@@ -11,5 +12,9 @@ test_that("can read metadata from cran", {
 })
 
 test_that("Can compile metadata", {
-
+  cran_meta <- cran_metadata(cran_db, "maic")
+  gh_meta <- github_metadata("maic", "Roche", "MAIC")
+  compiled <- compile_metadata(gh_meta, cran_meta)
+  expect_equal(names(compiled), c("name", "title", "description", "license", "authors",
+                                  "maintainer", "date_published", "has_tests", "has_vignettes", "num_contributors", "on_cran"))
 })
