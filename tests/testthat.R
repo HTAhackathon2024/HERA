@@ -1,4 +1,4 @@
 library(testthat)
-devtools::load_all(".")
+library(HERA)
 
 test_check("HERA")
