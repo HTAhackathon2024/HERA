@@ -1,5 +1,5 @@
-# HTA-hub
-Website for a repository/inventory of health economics R packages 
+# HERA - Health Economics R Packages for All
+Website for a repository/inventory of health economics R packages.
 
 # Compiling Quarto website
 To compile the website locally, run 
