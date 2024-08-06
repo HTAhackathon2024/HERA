@@ -1,6 +1,13 @@
 # HTA-hub
 Website for a repository/inventory of health economics R packages 
 
+# Compiling Quarto website
+To compile the website locally, run 
+```
+quarto render
+```
+
+This will generate static files in the `docs` folder. Open `docs/index.html` to view the website.
 ## Compiling package metadata
 To recompile metadata for the set of packages defined in `config/packages.csv`, run
 
