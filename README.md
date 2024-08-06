@@ -1,4 +1,5 @@
 # HERA - Health Economics R Packages for All
+[![codecov](https://codecov.io/gh/HTAhackathon2024/HERA/graph/badge.svg?token=4X9JMWKLIE)](https://codecov.io/gh/HTAhackathon2024/HERA)
 Website for a repository/inventory of open source health economics R packages available on Github, with a number of metrics indicative of reliability.
 
 ## Compiling Quarto website
