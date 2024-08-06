@@ -2,6 +2,7 @@ on:
   push:
     branches:
       - i13
+      - main
 
 name: Render and Publish
 
