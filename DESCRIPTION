@@ -9,4 +9,6 @@ Imports:
     purrr,
     tools
 Suggests:
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
