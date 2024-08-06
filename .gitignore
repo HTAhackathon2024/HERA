@@ -46,3 +46,4 @@ po/*~
 rsconnect/
 
 /.quarto/
+.idea
