@@ -1,0 +1,16 @@
+library(testthat)
+source("R/metadata.R")
+source("R/load_packages.R")
+source("R/utils.R")
+
+test_that("can read metadata from cran", {
+  packages <- get_packages()
+  cran_db <- get_cran_db(packages)
+  meta <- cran_metadata(cran_db, "maic")
+  expect_equal(meta$name, "maic")
+  expect_equal(meta$title, "Matching-Adjusted Indirect Comparison")
+  expect_equal(meta$license, "GPL-3")
+  expect_equal(meta$authors, "Rob Young")
+  expect_equal(meta$maintainer, "Rob Young")
+  expect_equal(meta$date_published, "2022-04-27 14:50:07 UTC")
+})
