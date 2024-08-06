@@ -34,6 +34,9 @@ get_cran_db <- function(packages, use_cache = TRUE) {
                                                   "maintainer",
                                                   "reverse_depends")]
     logger::log_info("Updating cache")
+    if (!dir.exists("cache")) {
+      dir.create("cache")
+    }
     saveRDS(list(package_names = packages$name, cran_db = cran_db), "cache/cran_db.rds")
   }
   cran_db
