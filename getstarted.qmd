@@ -1,6 +1,17 @@
 ---
-title: "Home"
+title: "Get Started with R in HTA"
 subtitle: ""
 ---
 
-This webpage aims to help you navigate you through the forest of R packages that can be used in health economics and signpost you to the most appropriate one, given your intended health economic analysis.
+R offers a multitude of packages related to health economics (comprehensive list on [hub.qmd](the Hub)). Below you can find a starter on the most common packages divided by indication.
+# State transition models
+State transition models are used to describe transitions between health states (e.g. healthy to sick). A number of models are available to implement in R.
+## Decision trees
+- `{rdecision}`
+- `{data.tree}`
+## Markov models
+- `{mstate}`
+- `{hesim}`
+- `{heemod}`
+## Microsimulation
+- `{gems}` - Generalized Multistate Simulation Model
