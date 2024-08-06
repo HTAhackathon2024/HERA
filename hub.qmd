@@ -9,14 +9,12 @@ format:
 library(DT)
 
 # fetch data
-pkgs <- read.csv("data/dummy_data.csv", stringsAsFactors = FALSE)
+pkgs <- read.csv("data/data.csv", stringsAsFactors = FALSE)
 
 # create datatable
 datatable(pkgs[-1], colnames = c(
-    "", "Name", "Description", "Available on CRAN",
-    "Has tests", "Used by", "Contributors (n)",
-    "Github rating", "Last commit", "License", "Published",
-    "Authors"
+    "", "Name", "Description", "License", "Authors", "Maintained by","Published", "Has tests", "Has vignettes",
+    "Contributors (n)"
 )
 )
 ```
