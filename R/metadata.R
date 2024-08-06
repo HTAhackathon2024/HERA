@@ -40,7 +40,8 @@ compile_metadata <- function(gh_data, cran_data = NULL, description_contents = N
               maintainer = maintainer,
               date_published = date_published,
               has_tests = gh_data$has_tests,
-              has_vignettes = gh_data$has_vignettes
+              has_vignettes = gh_data$has_vignettes,
+              num_contributors = gh_data$num_contributors
   )
   class(ret) <- append("htahub_metadata", class(ret))
   ret
@@ -63,29 +64,28 @@ cran_metadata <- function(rows) {
   ret
 }
 
-github_metadata <- function(name, path_fragment) {
-  meta <- NULL
-  tryCatch({
-    meta <- gh::gh("GET /repos/{path_fragment}/contents", path_fragment = path_fragment)
-  }, error = function(e) {
-    logger::log_error(e$message)
-  })
-  if (is.null(meta)) {
+github_metadata <- function(name, owner, repo) {
+  files_meta <- api_get_endpoint(owner = owner, repo = repo, endpoint = "contents")
+
+  if (is.null(files_meta)) {
     logger::log_info(sprintf("Excluding package %s because not found on Github", name))
     return(NULL)
   }
 
-  filenames <- sapply(meta, function(x) x$name)
+  filenames <- sapply(files_meta, function(x) x$name)
   if (!has_description(filenames)) {
     logger::log_info(sprintf("Excluding package %s because it does not have a DECSRIPTION file", name))
     return(NULL)
   }
 
+  extra_meta <- api_get_endpoints(owner = owner, repo = repo, endpoint = c("contributors", "commits"))
+
   logger::log_info(sprintf("Github metadata retrieved for package %s", name))
   ret <- list(has_tests = has_tests(filenames),
               has_vignettes = has_vignettes(filenames),
               name = name,
-              url = paste("https://github.com", path_fragment, sep = "/"))
+              url = paste("https://github.com", owner, repo, sep = "/"),
+              num_contributors = length(extra_meta$contributors))
   class(ret) <- append("github_metadata", class(ret))
   ret
 }
