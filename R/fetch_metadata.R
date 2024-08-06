@@ -1,5 +1,5 @@
 fetch_metadata_for_package <- function(name, path_fragment, cran_db) {
-  owner_repo <- stringr::str_split(path_fragment, "/")
+  owner_repo <- strsplit(path_fragment, "/")
   logger::log_info(path_fragment)
   owner <- owner_repo[[1]][1]
   repo <- owner_repo[[1]][2]

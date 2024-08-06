@@ -1,8 +1,12 @@
-Title: HTAHub website
+Package: HERA
+Title: HERA website
+Version: 0.0.0.1
 Imports:
-    cranly
-    dplyr
-    gh
-    logger
-    purrr
+    cranly,
+    dplyr,
+    gh,
+    logger,
+    purrr,
     tools
+Suggests:
+    testthat

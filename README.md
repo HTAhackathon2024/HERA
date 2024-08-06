@@ -30,3 +30,6 @@ can be provided by setting the environment variable `GITHUB_PAT`.
 When you first run the script, the CRAN database is cached in `cache/cran_db.rds`, 
 so subsequent script executions will be quicker. The cache will automatically update if
 the package list changes, but you can also force a cache refresh by deleting the `rds` file.
+
+## Testing
+Tests can be executed by running `devtools::test()`.

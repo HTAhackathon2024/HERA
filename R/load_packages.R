@@ -1,7 +1,7 @@
 #' @description Read packages from config/packages.csv, filtering to those with valid package names
 #' @return A data.frame with 2 columns: name, url
-get_packages <- function() {
-  packages <- read.csv("config/packages.csv",
+get_packages <- function(path = "config/packages.csv") {
+  packages <- read.csv(path,
                        header = FALSE,
                        col.names = c("name", "url"))
   packages <- packages[is_valid_name(packages$name),]
