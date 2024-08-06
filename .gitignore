@@ -20,6 +20,7 @@
 
 # RStudio files
 .Rproj.user/
+*.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -46,3 +47,4 @@ po/*~
 rsconnect/
 
 /.quarto/
+.idea
