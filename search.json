@@ -1,17 +1,17 @@
 [
   {
-    "objectID": "getstarted.html",
-    "href": "getstarted.html",
-    "title": "Home",
-    "section": "",
-    "text": "This webpage aims to help you navigate you through the forest of R packages that can be used in health economics and signpost you to the most appropriate one, given your intended health economic analysis."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "About",
     "section": "",
     "text": "The HTA hub is designed to provide an inventory of R packages related to health economics. It is aimed at health economists and R developers.\nThe hub provides an automated listing of relevant packages published on Github, and provides information on code quality.\nThe hub features a data scraping tool that searches through Github using keywords related to health economic modeling, and renders it on the hub.qmd.\nFor a curated list of health economics R packages, please visit the getstarted.qmd, last updated August 2024.\nThis project was started as part of a R-HTA Hackathon held at the University of Belfast on 5th and 6th August 2024."
+  },
+  {
+    "objectID": "getstarted.html",
+    "href": "getstarted.html",
+    "title": "Get Started with R in HTA",
+    "section": "",
+    "text": "R offers a multitude of packages related to health economics (comprehensive list on hub.qmd). Below you can find a starter on the most common packages divided by indication. # State transition models State transition models are used to describe transitions between health states (e.g. healthy to sick). A number of models are available to implement in R. ## Decision trees - {rdecision} - {data.tree} ## Markov models - {mstate} - {hesim} - {heemod} ## Microsimulation - {gems} - Generalized Multistate Simulation Model"
   },
   {
     "objectID": "hub.html",
