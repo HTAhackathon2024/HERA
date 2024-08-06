@@ -35,7 +35,7 @@ compile_metadata <- function(gh_data, cran_data = NULL, description_contents = N
   }
   ret <- list(name = gh_data$name,
               title = title,
-              description = description,
+              description = stringr::str_remove_all(description, "[\r\n]"),
               license = license,
               authors = paste(authors, collapse = ","),
               maintainer = maintainer,
