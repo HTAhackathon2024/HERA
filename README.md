@@ -1,6 +1,13 @@
-# HTA-hub
-Website for a repository/inventory of health economics R packages 
+# HERA - Health Economics R Packages for All
+Website for a repository/inventory of open source health economics R packages available on Github, with a number of metrics indicative of reliability.
 
+# Compiling Quarto website
+To compile the website locally, run 
+```
+quarto render
+```
+
+This will generate static files in the `docs` folder. Open `docs/index.html` to view the website.
 ## Compiling package metadata
 To recompile metadata for the set of packages defined in `config/packages.csv`, run
 
@@ -14,3 +21,7 @@ It saves the results in `data/data.csv`.
 
 Note that the Github API is heavily rate-limited if you don't provide a Github PAT. A PAT
 can be provided by setting the environment variable `GITHUB_PAT`.
+
+When you first run the script, the CRAN database is cached in `cache/cran_db.rds`, 
+so subsequent script executions will be quicker. The cache will automatically update if
+the package list changes, but you can also force a cache refresh by deleting the `rds` file.
