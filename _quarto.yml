@@ -1,6 +1,6 @@
 project:
   type: website
-   output-dir: docs
+  output-dir: docs
 
 website:
   title: HTA hub
@@ -9,7 +9,7 @@ website:
     logo: images/logo.png
     left:
       - icon: github
-        href: https://github.com/HTAhackathon2024/HTA-hub
+        href: https://htahackathon2024.github.io/HERA
       - href: index.qmd
         text: Home
       - href: getstarted.qmd
