@@ -8,7 +8,6 @@ quarto render
 ```
 
 This will generate static files in the `docs` folder. Open `docs/index.html` to view the website.
-=======
 ## Compiling package metadata
 To recompile metadata for the set of packages defined in `config/packages.csv`, run
 
