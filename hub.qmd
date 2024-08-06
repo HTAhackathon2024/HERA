@@ -1,6 +1,22 @@
 ---
-title: "Home"
-subtitle: ""
+title: "HTA-Hub"
+format:
+  html:
+    page-layout: full #allows for table to display wider
 ---
 
-This webpage aims to help you navigate you through the forest of R packages that can be used in health economics and signpost you to the most appropriate one, given your intended health economic analysis.
+```{r table, echo=FALSE}
+library(DT)
+
+# fetch data
+pkgs <- read.csv("data/dummy_data.csv", stringsAsFactors = FALSE)
+
+# create datatable
+datatable(pkgs[-1], colnames = c(
+    "", "Name", "Description", "Available on CRAN",
+    "Has tests", "Used by", "Contributors (n)",
+    "Github rating", "Last commit", "License", "Published",
+    "Authors"
+)
+)
+```
