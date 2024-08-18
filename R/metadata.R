@@ -153,9 +153,9 @@ cran_metadata <- function(cran_db, name) {
 #' DESCRIPTION file data points are compiled separately in the 
 #' `compiled_metadata` function.
 #' 
-#' @param name A character string (length 1) for the package name.
-#' @param owner A character string (length 1) for the package owner.
-#' @param repo A character string (length 1) for the repo name.
+#' @param name A character vector of length 1 for the package name.
+#' @param owner A character vector of length 1 for the package owner.
+#' @param repo A character vector of length for the repo name.
 #' 
 #' @return A list of target metadata. Includes:
 #'          - Whether a tests folder is present; 

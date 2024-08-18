@@ -1,10 +1,10 @@
 #' @description 
 #' Processing wrapper function for retrieving and compiling target metadata of a package.
 #' 
-#' @param name          A character string of length 1 for the package name.
-#' @param path_fragment A character string of length 1 containing the fragment of 
+#' @param name          A character vector of length 1 for the package name.
+#' @param path_fragment A character vector of length 1 containing the fragment of 
 #'                      the URL for the repo owner and repo name elements.
-#' @param cran_db       A data.frame of relevant metadata from the CRAN package database
+#' @param cran_db       A data frame of relevant metadata from the CRAN package database
 #'                      for packages also available on CRAN.
 #' 
 #' @return The result of compile_metadata - A list of target metadata for a given package.
@@ -58,9 +58,9 @@ fetch_metadata_for_package <- function(name, path_fragment, cran_db) {
 #' @description 
 #' Retrieve and compiles target metadata for each package in packages via calls to fetch_metadata_for_package.
 #' 
-#' @param packages  A data.frame containing the names and GitHub URL fragments for 
+#' @param packages  A data frame containing the names and GitHub URL fragments for 
 #'                  each package.
-#' @param cran_db   A data.frame of relevant metadata from the CRAN package database
+#' @param cran_db   A data frame of relevant metadata from the CRAN package database
 #'                  for packages also available on CRAN.
 #' 
 #' @return          A nested list of target metadata for each package.
