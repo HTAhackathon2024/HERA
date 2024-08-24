@@ -1,6 +1,7 @@
 ---
 title: "Home"
 subtitle: ""
+logo: logo.jpg
 format:
     html:
         page-layout: full
