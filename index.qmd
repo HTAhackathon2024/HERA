@@ -4,6 +4,8 @@ subtitle: ""
 format:
     html:
         page-layout: full
+execute: 
+  echo: false
 ---
 
 <img src="logo.jpg" height="150px"/>
@@ -17,5 +19,5 @@ This project was started as part of a R-HTA Hackathon held at the University of 
 
 ```{r}
 dat <- read.csv("data/data.csv")
-knitr::kable(dat)
+DT::datatable(dat)
 ```
