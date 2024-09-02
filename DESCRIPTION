@@ -7,9 +7,9 @@ Imports:
     gh,
     logger,
     purrr,
-    tools
+    tools,
+    DT
 Suggests:
     testthat,
     knitr,
-    DT,
     rmarkdown
