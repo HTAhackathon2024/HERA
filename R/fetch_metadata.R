@@ -8,22 +8,21 @@
 #'                      for packages also available on CRAN.
 #' 
 #' @return The result of compile_metadata - A list of target metadata for a given package.
-
 fetch_metadata_for_package <- function(name, path_fragment, cran_db) {
   
   # Split path_fragment to extract repo owner & repo name elements.
   owner_repo <- strsplit(path_fragment, "/")
   logger::log_info(path_fragment)
-  # Extract owner element from strsplit list.
+  # Extract owner element from strsplit return list.
   owner <- owner_repo[[1]][1]
-  # Extract repo element from strsplit list.
+  # Extract repo element from strsplit return list.
   repo <- owner_repo[[1]][2]
   logger::log_info(sprintf("Fetching metadata for %s", name))
   # Call on_cran utils fnc. Checks for package name in cran_db$packages.
   on_cran <- on_cran(name, cran_db)
   
-  # Retrieve GitHub metadata with call to github_metadata. If NULL, return NULL - github_metadata returns NULL if package is not found
-  # or the description file is missing.
+  # Retrieve GitHub metadata with call to github_metadata. If NULL, return NULL - github_metadata returns NULL 
+  # if package is not found or the description file is missing.
   gh_data <- github_metadata(name, owner, repo)
   if (is.null(gh_data)) {
     return(NULL)
@@ -31,7 +30,7 @@ fetch_metadata_for_package <- function(name, path_fragment, cran_db) {
   # If package is available on CRAN:
   if (on_cran) {
     logger::log_info(sprintf("Package %s is on CRAN; using CRAN metadata", name))
-    # Retrieve and compile metadata with calls to cran_data and compile_metadata.
+    # Retrieve and compile metadata with calls to cran_metadata and compile_metadata.
     cran_data <- cran_metadata(cran_db, name)
     compile_metadata(gh_data, cran_data = cran_data)
     
@@ -39,7 +38,7 @@ fetch_metadata_for_package <- function(name, path_fragment, cran_db) {
   } else {
     logger::log_info(sprintf("Package %s is not on CRAN; retrieving DESCRIPTION file from Github", name))
     
-    # Retrieve GitHub DESCRIPTION file contents with API GET call. Return NULL if error.     
+    # Retrieve DESCRIPTION file contents from GitHub with API GET call. Return NULL if error.     
     res <- api_get_endpoint(owner = owner, repo = repo, endpoint = "contents/DESCRIPTION")
     if (is.null(res)) {
       logger::log_info(sprintf("Excluding package %s of error retrieving DESCRIPTION from Github", name))
@@ -54,16 +53,15 @@ fetch_metadata_for_package <- function(name, path_fragment, cran_db) {
   }
 }
 
-
 #' @description 
-#' Retrieve and compiles target metadata for each package in packages via calls to fetch_metadata_for_package.
+#' Retrieve and compiles target metadata for each package in packages via calls to [fetch_metadata_for_package()].
 #' 
-#' @param packages  A data frame containing the names and GitHub URL fragments for 
+#' @param packages  A data frame containing the name and associated and GitHub URL fragment for 
 #'                  each package.
 #' @param cran_db   A data frame of relevant metadata from the CRAN package database
 #'                  for packages also available on CRAN.
 #' 
-#' @return          A nested list of target metadata for each package.
+#' @return          A list containing target metadata for each package.
 fetch_metadata <- function(packages, cran_db) {
   
   lapply(seq_len(nrow(packages)), function(i) {

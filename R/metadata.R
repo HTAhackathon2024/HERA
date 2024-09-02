@@ -4,8 +4,7 @@
 #' @param parsed A DESCRIPTION file - An object of class \code{R6} and \code{description}.
 #' @param field A character string of length 1 for the field key.
 #'  
-#' @return NA if the field is not present; else, an un-named vector for the field value.
-
+#' @return \code{NA} if the field is not present; else, an un-named vector for the field value.
 get_field_safely <- function(parsed, field) {
   # Use has_fields method to determine if field is present.
   if (parsed$has_fields(field)) {
@@ -24,7 +23,7 @@ get_field_safely <- function(parsed, field) {
 #' 
 #' @param gh_data A metadata list object of class github_metadata.
 #' @param cran_db A metadata list object of class cran_metadata.
-#' @param description_contents Package DESCRIPTION file contents from GitHub; defaults to NULL.
+#' @param description_contents Package DESCRIPTION file contents from GitHub; defaults to \code{NULL}
 #' 
 #' @return A list of target metadata. Includes:
 #'          - The package name;
@@ -34,7 +33,7 @@ get_field_safely <- function(parsed, field) {
 #'          - The authors;
 #'          - The maintainer;
 #'          - The data published;
-#'          - Whether a tests folder is present; 
+#'          - Whether a tests folder is present;
 #'          - Whether a vignettes folder is present;
 #'          - The number of contributors;
 #'          - Whether or not the package is on CRAN.
@@ -97,12 +96,11 @@ compile_metadata <- function(gh_data, cran_data = NULL, description_contents = N
               on_cran = on_cran
   )
   
-  # Add class "htahub_metadata".
+  # Append class "htahub_metadata".
   class(ret) <- append("htahub_metadata", class(ret))
   ret
   
 }
-
 
 #' @description
 #' Compiles target metadata from CRAN database for a single package.
@@ -151,7 +149,7 @@ cran_metadata <- function(cran_db, name) {
 #' @description
 #' Compiles target metadata excl. DESCRIPTION file data points for a single GitHub repo.
 #' DESCRIPTION file data points are compiled separately in the 
-#' `compiled_metadata` function.
+#' [compiled_metadata()].
 #' 
 #' @param name A character vector of length 1 for the package name.
 #' @param owner A character vector of length 1 for the package owner.
