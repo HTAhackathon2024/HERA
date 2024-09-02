@@ -5,6 +5,7 @@ logo: logo.jpg
 format:
     html:
         page-layout: full
+        css: styles.css
 execute: 
   echo: false
 ---
@@ -20,5 +21,21 @@ This project was started as part of a R-HTA Hackathon held at the University of 
 
 ```{r}
 dat <- read.csv("data/data.csv")
-DT::datatable(dat)
+#PLACEHOLDER - WILL MOVE TO PROCESSING SCRIPTS
+names(dat) <- c("Package",
+                "Title",
+                "Description",
+                "License",
+                "Authors",
+                "Maintainer",
+                "Date published (CRAN)",
+                "Has tests?",
+                "Has Vingettes?",
+                "# contributors",
+                "On CRAN?")
+DT::datatable(dat,
+              options = list(
+                scrollX = TRUE,
+                scrollY = TRUE)
+              )
 ```
