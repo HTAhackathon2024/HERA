@@ -20,19 +20,7 @@ For a human-curated list of health economics R packages, please visit the [getst
 This project was started as part of a R-HTA Hackathon held at the University of Belfast on 5th and 6th August 2024.
 
 ```{r}
-dat <- read.csv("data/data.csv")
-#PLACEHOLDER - WILL MOVE TO PROCESSING SCRIPTS
-names(dat) <- c("Package",
-                "Title",
-                "Description",
-                "License",
-                "Authors",
-                "Maintainer",
-                "Date published (CRAN)",
-                "Has tests?",
-                "Has Vingettes?",
-                "# contributors",
-                "On CRAN?")
+dat <- read.csv("data/data.csv", check.names = FALSE)
 DT::datatable(dat,
               options = list(
                 scrollX = TRUE,
