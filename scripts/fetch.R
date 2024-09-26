@@ -19,5 +19,19 @@ all_names <- unique(unlist(lapply(package_metadata, names)))
 filled_list <- lapply(package_metadata, fill_na, all_names = all_names)
 # Create combined data frame of package metadata.
 df <- dplyr::bind_rows(lapply(filled_list, as.data.frame))
+# Clean variable labels
+var_names <- c("Package",
+               "Title",
+               "Description",
+               "License",
+               "Authors",
+               "Maintainer",
+               "Date published (CRAN)",
+               "Has tests?",
+               "Has Vingettes?",
+               "# Contributors",
+               "# Repo stars",
+               "On CRAN?")
+names(df) <- var_names
 # Write combined data frame to file as csv.
 write.csv(df, "data/data.csv", row.names = FALSE)

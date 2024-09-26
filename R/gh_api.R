@@ -8,8 +8,12 @@
 #' @return              A list object containing the API query response data.
 api_get_endpoint <- function(owner, repo, endpoint) {
 
-  # Create API query to string
-  api_query <- paste0("GET /repos/", owner, "/", repo, "/", endpoint)
+  # Create API endpoint string
+  if (is.na(endpoint)) {
+    api_query <- paste0("GET /repos/", owner, "/", repo)
+  } else {
+    api_query <- paste0("GET /repos/", owner, "/", repo, "/", endpoint)
+  }
   logger::log_debug(api_query)
 
   # Make GitHub API request for endpoint. tryCatch used as error handler wrapper.

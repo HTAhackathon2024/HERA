@@ -15,6 +15,17 @@ test_that("Can compile metadata", {
   cran_meta <- cran_metadata(cran_db, "maic")
   gh_meta <- github_metadata("maic", "Roche", "MAIC")
   compiled <- compile_metadata(gh_meta, cran_meta)
-  expect_equal(names(compiled), c("name", "title", "description", "license", "authors",
-                                  "maintainer", "date_published", "has_tests", "has_vignettes", "num_contributors", "on_cran"))
+  expect_equal(names(compiled), c("name", 
+                                  "title", 
+                                  "description", 
+                                  "license", 
+                                  "authors",
+                                  "maintainer", 
+                                  "date_published",
+                                  "has_tests", 
+                                  "has_vignettes", 
+                                  "num_contributors",
+                                  "num_stars",
+                                  "on_cran")
+               )
 })

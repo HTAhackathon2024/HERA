@@ -92,6 +92,7 @@ compile_metadata <- function(gh_data, cran_data = NULL, description_contents = N
               has_tests = gh_data$has_tests,
               has_vignettes = gh_data$has_vignettes,
               num_contributors = gh_data$num_contributors,
+              num_stars = gh_data$num_stars,
               on_cran = on_cran
   )
   
@@ -180,8 +181,10 @@ github_metadata <- function(name, owner, repo) {
     return(NULL)
   }
   
-  # Get additional repo metadata via contributors" and "commits" endpoints.
-  extra_meta <- api_get_endpoints(owner = owner, repo = repo, endpoint = c("contributors", "commits"))
+  # Get additional repo metadata - NA for used for `main` call as there is no specific endpoint for the API call.
+  extra_endpoints <- c("contributors", "commits", NA)
+  extra_meta <- api_get_endpoints(owner = owner, repo = repo, endpoint = extra_endpoints)
+  names(extra_meta)[3] <- "main"
   logger::log_info(sprintf("Github metadata retrieved for package %s", name))
   
   # Compile list of target metadata.
@@ -189,7 +192,9 @@ github_metadata <- function(name, owner, repo) {
               has_vignettes = has_vignettes(filenames),
               name = name,
               url = paste("https://github.com", owner, repo, sep = "/"),
-              num_contributors = length(extra_meta$contributors))
+              num_contributors = length(extra_meta$contributors),
+              num_stars = extra_meta$main$stargazers_count
+              )
   
   # Add class "github_metadata".
   class(ret) <- append("github_metadata", class(ret))
