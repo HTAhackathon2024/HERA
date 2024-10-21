@@ -1,3 +1,4 @@
+#!/usr/bin/Rscript
 # Source fnc scripts
 source("R/utils.R")
 source("R/metadata.R")
